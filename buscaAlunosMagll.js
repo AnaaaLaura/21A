@@ -1,5 +1,5 @@
 async function listarTodos() {
-    const buscaNoBancoDeDados = await fetch('http://localhost:3000/alunos');
+    const buscaNoBancoDeDados = await fetch('http://localhost:3000');
     const respostaObtida = await buscaNoBancoDeDados.json();
     console.log(respostaObtida);
     let html = '<table border="1"><tr><th>CPF</th><th>Nome</th></tr>';

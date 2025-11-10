@@ -8,7 +8,7 @@ document.getElementById('formAlunos').addEventListener('submit', async function 
     const peso = document.getElementById('peso').value;
     const objetivo = document.getElementById('objetivo').value;
 
-    const response = await fetch('http://localhost:3330/alunos', {
+    const response = await fetch('http://localhost:3000/aluno', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, nome, email, idade, peso, objetivo })

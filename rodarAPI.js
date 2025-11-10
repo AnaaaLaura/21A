@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(express.static('.'));
 
 // Criar cliente
-app.post('/alunos', (req, res) => {
+app.post('/alunosMagll', (req, res) => {
     const { cpf, nome } = req.body;
 
-    const codigoDoMySQL = 'INSERT INTO alunos (id, nome, email, idade, peso, objetivo) VALUES (?, ?, ?, ?, ?, ?)';
+    const codigoDoMySQL = 'INSERT INTO alunosMagll (id, nome, email, idade, peso, objetivo) VALUES (?, ?, ?, ?, ?, ?)';
 
     acessaBancoNoServidor.query(codigoDoMySQL, [id, nome, email, idade, peso, objetivo], (err, results) => {
         if (err) {
@@ -23,8 +23,8 @@ app.post('/alunos', (req, res) => {
 });
 
 // Listar clientes
-app.get('/alunos', (req, res) => {
-    const codigoDoMySQL = 'SELECT * FROM alunos';
+app.get('/alunosMagll', (req, res) => {
+    const codigoDoMySQL = 'SELECT * FROM alunosMagll';
 
     acessaBancoNoServidor.query(codigoDoMySQL, (err, results) => {
         if (err) {
