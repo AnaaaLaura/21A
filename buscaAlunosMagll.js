@@ -1,11 +1,11 @@
 async function listarTodos() {
-    const buscaNoBancoDeDados = await fetch('http://localhost:3000');
+    const buscaNoBancoDeDados = await fetch('http://localhost:3000/alunosMagll');
     const respostaObtida = await buscaNoBancoDeDados.json();
     console.log(respostaObtida);
     let html = '<table border="1"><tr><th>CPF</th><th>Nome</th></tr>';
 
-    respostaObtida.forEach(alunos => {
-        html += `<tr><td>${alunos.id}</td><td>${alunos.nome}</td><td>${alunos.email}</td><td>${alunos.idade}</td><td>${alunos.peso}</td><td>${alunos.objetivo}</td></tr>`;
+    respostaObtida.forEach(alunosMagll => {
+        html += `<tr><td>${alunosMagll.id}</td><td>${alunosMagll.nome}</td><td>${alunosMagll.email}</td><td>${alunosMagll.idade}</td><td>${alunosMagll.peso}</td><td>${alunosMagll.objetivo}</td></tr>`;
     });
 
     html += '</table>';
